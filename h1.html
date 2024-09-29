@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="assets/css/styles.css"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+ 
+   
+        <!-- ===== BOX ICONS ===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>وكالة باندا للطباعة والاشهار</title>
+    <style>
+    
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            padding: 10rem 2rem; /* Adjusted padding for better spacing */
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+            .gallery-item img {
+                width: 100%;
+                height: auto;
+                border-radius: 12px;
+                display: block;
+                transition: transform 0.3s;
+            }
+
+            .gallery-item:hover {
+                transform: scale(1.05);
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            }
+
+                .gallery-item:hover img {
+                    transform: scale(1.1);
+                }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem 5%; /* Less padding on smaller screens */
+            }
+
+                .header .navbar a {
+                    font-size: 1.5rem; /* Smaller font size on mobile */
+                    margin-left: 1.5rem; /* Less margin on smaller screens */
+                }
+
+            .gallery {
+                padding: 5rem 1rem; /* Less padding on mobile */
+            }
+
+            .heading {
+                font-size: 3rem; /* Smaller heading font on mobile */
+            }
+        }
+        /* Footer Styling */
+        footer {
+            background-color: #2b3b44;
+            color: white;
+            padding: 40px 0;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #444;
+        }
+
+        .footer-about, .footer-links, .footer-contact {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+            .footer-about h3, .footer-links h3, .footer-contact h3 {
+                font-size: 20px;
+                margin-bottom: 15px;
+                color: #ff8800;
+            }
+
+            .footer-about p {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+
+            .footer-links ul, .footer-contact ul {
+                list-style: none;
+                padding: 0;
+            }
+
+                .footer-links ul li, .footer-contact ul li {
+                    margin-bottom: 10px;
+                    font-size: 16px;
+                }
+
+                    .footer-links ul li a {
+                        color: white;
+                        text-decoration: none;
+                    }
+
+                        .footer-links ul li a:hover {
+                            color: #ff8800;
+                        }
+
+                .footer-contact ul li {
+                    font-size: 16px;
+                }
+
+                    .footer-contact ul li i {
+                        margin-right: 10px;
+                    }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #222;
+            border-top: 1px solid #444;
+        }
+
+            .footer-bottom p {
+                margin: 0;
+                font-size: 14px;
+            }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+            .social-icons a {
+                color: white;
+                margin: 0 10px;
+                text-decoration: none;
+            }
+
+                .social-icons a:hover {
+                    color: #ff8800;
+                }
+
+            .social-icons i {
+                font-size: 18px;
+            }
+
+        /* Responsive Design */
+
+        /* شاشات أصغر من 768px */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            .services, .mission, .features, .cta {
+                padding: 30px;
+            }
+
+            .service-list {
+                flex-direction: column;
+            }
+
+            .service-item {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+
+        /* شاشات أصغر من 480px */
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 28px;
+            }
+
+            .hero-content p {
+                font-size: 14px;
+            }
+
+            .btn-main {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-about, .footer-links, .footer-contact {
+                padding: 10px 0;
+            }
+        }
+        .weather-container {
+            background-color: #f0f8ff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .weather-info {
+            font-size: 18px;
+            color: #333;
+        }
+
+    </style>
+   
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- bootstrap cdn link -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+
+    <!-- custom css file link  -->
+    
+    <link rel="stylesheet" href="assets/CSS/styles.css">
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4/dist/fancybox.css">
+    <style>.container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 30px auto;
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border: 1px solid #ddd;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+            ul {
+                list-style-type: disc;
+                margin: 0;
+                padding-left: 20px;
+            }
+            li {
+            margin-bottom: 10px;
+        }
+        .nav__logo-container {
+        display: flex;
+        align-items: center;
+    }
+    
+    .nav__logo-img {
+        width: 20px;
+        height: auto;
+        margin-right: 10px; /* Add space between the logo and the text */
+    }
+    
+    .nav__logo {
+        font-size: 16px; /* Adjust the font size as needed */
+        color: #000000; /* Set the desired color */
+        text-decoration: none;
+    }
+
+    .skills {
+    padding: 50px 0;
+    background: linear-gradient(90deg,#3ee124, #3f7628);
+
+}
+    
+    </style>
+</head>
+
+    <!-- header section starts  -->
+
+   <!--===== HEADER =====-->
+<header class="l-header">
+    <nav class="nav bd-grid">
+        <div class="nav__logo-container">
+            <img src="ICON.png" alt="Logo" class="nav__logo-img">
+            <a href="#" class="nav__logo">وكالة باندا للطباعة والاشهار</a>
+        </div>
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="index.html" class="nav__link active">رئيسي</a></li>
+                <li class="nav__item"><a href="index.html" class="nav__link">من نحن</a></li>
+                <li class="nav__item"><a href="index.html" class="nav__link">خدماتنا</a></li>
+                <li class="nav__item"><a href="h1.html" class="nav__link"> معرض الأعمال،</a></li>
+                <li class="nav__item"><a href="index.html" class="nav__link">احداث</a></li>
+                <li class="nav__item"><a href="index.html" class="nav__link">اتصل بنا</a></li>
+            </ul>
+        </div>
+        <div class="nav__toggle" id="nav-toggle">
+            <i class='bx bx-menu'></i>
+        </div>
+    </nav>
+</header>
+    <div class="banner-area"></div>
+
+
+    <div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+        <a href="https://wa.me/0660-95-61-55" target="_blank" style="display: inline-block; background-color: #25D366; color: white; border-radius: 50%; padding: 15px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);">
+            <img src="assets/img/whatsapp.png" alt="واتساب" style="width: 50px; height: 50px;">
+        </a>
+    </div>
+
+    <section class="skills section" id="skills">
+        <h2 class="section-title">🐼🐼وكالة باندا للطباعة والإشهار🐼🐼</h2>
+    </section>
+    
+    <main>
+        <div class="gallery">
+            <div class="gallery-item">
+                <a href="assets/img/1.jpg" data-lightbox="gallery" data-title="  ">
+                    <img src="assets/img/1.jpg" alt="صورة 1">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/2.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/2.jpg" alt="صورة 2">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/3.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/3.jpg" alt="صورة 3">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/4.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/4.jpg" alt="صورة 4">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/5.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/5.jpg" alt="صورة 5">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/6.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/6.jpg" alt="صورة 6">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/7.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/7.jpg" alt="صورة 7">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/8.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/8.jpg" alt="صورة 8">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/9.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/9.jpg" alt="صورة 9">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/10.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/10.jpg" alt="صورة 10">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/11.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/11.jpg" alt="صورة 11">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/12.jpg" data-lightbox="gallery" data-title="  ">
+                    <img src="assets/img/12.jpg" alt="صورة 12">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/13.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/13.jpg" alt="صورة 13">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/14.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/14.jpg" alt="صورة 14">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/15.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/15.jpg" alt="صورة 15">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/16.jpg" data-lightbox="gallery" data-title="  ">
+                    <img src="assets/img/16.jpg" alt="صورة 16">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/17.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/17.jpg" alt="صورة 17">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/18.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/18.jpg" alt="صورة 18">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/19.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/19.jpg" alt="صورة 19">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/20.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/20.jpg" alt="صورة 20">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/21.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/21.jpg" alt="صورة 21">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/22.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/22.jpg" alt="صورة 21">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/23.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/23.jpg" alt="صورة 21">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/H1.png" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/H1.png" alt="صورة 21">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/31.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/31.jpg" alt="صورة 21">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/30.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/30.jpg" alt="صورة 21">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/34.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/34.jpg" alt="صورة 21">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/28.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/28.jpg" alt="صورة 21">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/29.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/29.jpg" alt="صورة 21">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="assets/img/33.jpg" data-lightbox="gallery" data-title=" ">
+                    <img src="assets/img/33.jpg" alt="صورة 21">
+                </a>
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <div class="gallery-item">
+                <a href="assets/img/V1.mp4" data-fancybox="gallery" data-caption=" ">
+                    <video controls width="100%" style="border-radius: 12px;">
+                        <source src="assets/img/V1.mp4" type="video/mp4">
+                        المتصفح الخاص بك لا يدعم تشغيل الفيديو.
+                    </video>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/V2.mp4" data-fancybox="gallery" data-caption=" ">
+                    <video controls width="100%" style="border-radius: 12px;">
+                        <source src="assets/img/V2.mp4" type="video/mp4">
+                        المتصفح الخاص بك لا يدعم تشغيل الفيديو.
+                    </video>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/V3.mp4" data-fancybox="gallery" data-caption=" ">
+                    <video controls width="100%" style="border-radius: 12px;">
+                        <source src="assets/img/V3.mp4" type="video/mp4">
+                        المتصفح الخاص بك لا يدعم تشغيل الفيديو.
+                    </video>
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="assets/img/V4.mp4" data-fancybox="gallery" data-caption=" ">
+                    <video controls width="100%" style="border-radius: 12px;">
+                        <source src="assets/img/V4.mp4" type="video/mp4">
+                        المتصفح الخاص بك لا يدعم تشغيل الفيديو.
+                    </video>
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="assets/img/V5.mp4" data-fancybox="gallery" data-caption=" ">
+                    <video controls width="100%" style="border-radius: 12px;">
+                        <source src="assets/img/V5.mp4" type="video/mp4">
+                        المتصفح الخاص بك لا يدعم تشغيل الفيديو.
+                    </video>
+                </a>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+
+
+
+
+
+
+
+
+    <a href="#top" class="scroll-top">أعلى<i class="fa fa-chevron-up"></i></a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+    <!-- Bootstrap js cdn link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <!-- custom js file link  -->
+
+    <script src="JS/script.js"></script>
+
+    <script>
+        // إذا كنت ترغب في تحديث المعلومات ديناميكيًا
+        function updateWeather() {
+            // يمكنك تحديث القيم هنا إذا كنت تريد جعلها ديناميكية
+            document.getElementById('weather').innerHTML = `
+                <p>درجة الحرارة: 30 °C</p>
+                <p>حالة الطقس: غائم جزئيًا</p>
+                <p>الرطوبة: 75%</p>
+            `;
+        }
+
+        // استدعاء الوظيفة عند تحميل الصفحة
+        window.onload = updateWeather;
+    </script>
+
+           <!--===== FOOTER =====-->
+           <footer class="footer">
+            <div class="footer__container bd-grid">
+                <div class="footer__box">
+                    <h2 class="footer__title">رابط سريع</h2>
+                    <ul>
+                        <li><a href="index.html">رئيسي</a></li>
+                        <li><a href="index.html">من نحن</a></li>
+                        <li><a href="index.html"> خدماتنا</a></li>
+                        <li><a href="h1.html"> معرض الأعمال،</a></li>
+                        <li><a href="index.html">احداث</a></li>
+                        <li><a href="index.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer__box">
+                    <h2 class="footer__title">تواصل معنا</h2>
+                    <p class="footer__text">للاستفسارات والتواصل، يمكنك الاتصال بنا عبر البريد الإلكتروني أو الهاتف المذكورين أعلاه.</p>
+                </div>
+                <div class="footer__data">
+                    <h2 class="footer__title">الشبكات الاجتماعية</h2>
+                    <a href="https://www.facebook.com/profile.php?id=100089372165123" class="footer__social"><i class='bx bxl-facebook' ></i></a>
+                    <a href="https://www.instagram.com/pandapubsaida?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="footer__social"><i class='bx bxl-instagram' ></i></a>
+                    <a href="https://www.tiktok.com/@pandapubsaida?is_from_webapp=1&sender_device=pc" class="footer__social"><i class='fab fa-tiktok' ></i></a>
+                </div>
+                <h2>الخريطة</h2>
+                <div id="map-container" style="width: 100%; height: 0; padding-bottom: 56.25%; position: relative;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.40764043816!2d0.15007657511234068!3d34.84598327540472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128017343d26d7d7%3A0x2b3303f9c71b45c!2z2YjZg9in2YTYqSDYqNin2YbYr9inINmE2YTYt9io2KfYudipINmIINin2YTYpdi02YfYp9ix!5e0!3m2!1sfr!2sdz!4v1727368683802!5m2!1sfr!2sdz"
+                        style="border:0; position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+                <div class="footer__box">
+                    <h2 class="footer__title">حقوق النشر</h2>
+                    <p class="footer__text">وكالة باندا الطباعة "التميز"|الحقوق محفوظة ©2024</p>
+                </div>
+            </div>
+        </footer>
+            <!--===== SCROLL REVEAL =====-->
+            <script src="https://unpkg.com/scrollreveal"></script>
+    
+            <!--===== MAIN JS =====-->
+            <script src="assets/js/main.js"></script>
+        </body>
+    </html>
